@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<center><html>
     <head>
         <title>Stropy's lounge</title>
         <meta charset="utf-8">
@@ -9,6 +9,22 @@
         <p>Welcome to my internet lounge.</p>
         <img src="res/macdemarco.gif" width="350" height="200">
         <h3>About me</h3>
-        <p>I develop and program all sorts of stuff. i love learning and explore new things.</p>
+        <p>antisocial extrovert. i love learning and exploring new things.</p>
+        <p>i develop and program all sorts of stuff.</p>
+        <p><b>favorite cig brand: </b>Marlboro Gold</p>
+        <p>check out my github: <a href="https://github.com/jozistrozer" target="_blank">jozistrozer</a></p>
+        <p>leave me a message: <a href="mailto:jozistrozer13@gmail.com">jozistrozer13@gmail.com</a></p>
+        <button type="button" id="btnMonkey" onclick="ShowMonkeys();">two monkeys in love</button>
+        <br>
+        <img src="res/twomonkeysinlove.jpg" style="visibility: hidden; margin-top: 25px;" id="imgMonkey">
     </body>
-</html>
+    <script>
+        function ShowMonkeys(){
+            if (document.getElementById("imgMonkey").style.visibility == "hidden"){
+                document.getElementById("imgMonkey").style.visibility = "visible";
+            } else {
+                document.getElementById("imgMonkey").style.visibility = "hidden";
+            }
+        }
+    </script>
+</html></center>
