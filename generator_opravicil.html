@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Generator opravičil</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('input[type="checkbox"]').on('change', function() {
+                    $(this).siblings('input[type="checkbox"]').prop('checked', false);
+                });
+            });
+            
+        </script>
+    </head>
+    <body>
+        <h1>Generator opravičil</h1>
+        <p>Prikrajšaj si čas in generiraj opravičilo.</p>
+        <form action="">
+            <p>Ime: <input type="text" name="ime"></p>
+            <p>Priimek: <input type="text" name="priimek"></p>
+            Moški<input type="checkbox" name="M"><br>
+            Ženska<input type="checkbox" name="Z"><br>
+            <input type="date" name="datum">
+        </form>
+    </body>
+</html>
