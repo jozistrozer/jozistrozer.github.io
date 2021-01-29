@@ -7,37 +7,66 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
+            // List izgovorov
+            var izgovori = ["slabega počutja.", "obiska rednega pregleda zobozdravnika."];
+            
+            // Jquery
             $(document).ready(function(){
+                // Varovalka, da nista oba spola označena.
                 $('input[name="chkSpol"]').on('change', function() {
                     $(this).siblings('input[type="checkbox"]').prop('checked', false);
                 });
             });
             
-            var izgovori = ["slabega počutja.", "obiska rednega pregleda zobozdravnika.", "",];
+            function Generiraj(){
+                // Podatki
+                var spol = null;
+                var datum_nf = document.getElementById("datum").value;
+
+                // Datum izvlečen ter pravilno formatiran.
+                var datum = datum_nf.split("-")[2] + "." + datum_nf.split("-")[1] + "." + datum_nf.split("-")[0];
+                // var ure = [false, false, false, false, false, false, false, false, false];
+                var razlog = izgovori[Math.floor(Math.random() * izgovori.length)];
+
+                // Preverjanje - spol
+                if (document.getElementById("chkMoski").checked){
+                    spol = "mojega sina";
+                } else { spol = "mojo hčerko"; }
+                
+                /* Preverjanje ur
+                for (var i = 0; i < 9; i++){
+                    if (document.getElementById("ura"+i).checked){
+                        ure[i] = true;
+                    }
+                }*/
+
+                var tekst = "Pozdravljeni, prosim, če opravičite " + spol + " dne " + datum + " zaradi " + razlog;
+                // IDEJA: po prvem koraku se prikaže tekst, v katere so input fieldi v katere uporabnik vpiše svoje podatke (ime, priimek v rodilniku in ime starša)
+                console.log(tekst);
+
+            }
+            
         </script>
     </head>
     <body>
         <h1>Generator opravičil</h1>
         <p>Prikrajšaj si čas in generiraj opravičilo.</p>
-        <form action="">
-            <p>Ime: <input type="text" name="ime"></p>
-            <p>Priimek: <input type="text" name="priimek"></p>
-            Moški<input type="checkbox" name="chkSpol"><br>
-            Ženska<input type="checkbox" name="chkSpol"><br>
-            <input type="date" name="datum">
-            <div class="divUre">
-                <p>Označi manjkajoče ure.</p>
-                0<input type="checkbox" id="ura0"><br>
-                1<input type="checkbox" id="ura1"><br>
-                2<input type="checkbox" id="ura2"><br>
-                3<input type="checkbox" id="ura3"><br>
-                4<input type="checkbox" id="ura4"><br>
-                5<input type="checkbox" id="ura5"><br>
-                6<input type="checkbox" id="ura6"><br>
-                7<input type="checkbox" id="ura7"><br>
-                8<input type="checkbox" id="ura8"><br>
-            </div>
-            <input type="submit" value="Generiraj">
-        </form>
+        Moški<input type="checkbox" name="chkSpol" id="chkMoski"><br>
+        Ženska<input type="checkbox" name="chkSpol" id="chkZenski"><br>
+        <input type="date" id="datum">
+        <!-- <div class="divUre">
+            <p>Označi manjkajoče ure.</p>
+            0<input type="checkbox" id="ura0"><br>
+            1<input type="checkbox" id="ura1"><br>
+            2<input type="checkbox" id="ura2"><br>
+            3<input type="checkbox" id="ura3"><br>
+            4<input type="checkbox" id="ura4"><br>
+            5<input type="checkbox" id="ura5"><br>
+            6<input type="checkbox" id="ura6"><br>
+            7<input type="checkbox" id="ura7"><br>
+            8<input type="checkbox" id="ura8"><br>
+        </div> -->
+        <button type="button" onclick="Generiraj()">Ustvari</button>
+
     </body>
 </html>
