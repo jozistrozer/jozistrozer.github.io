@@ -8,11 +8,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
-                $('input[type="checkbox"]').on('change', function() {
+                $('input[name="chkSpol"]').on('change', function() {
                     $(this).siblings('input[type="checkbox"]').prop('checked', false);
                 });
             });
             
+            var izgovori = ["slabega počutja.", "obiska rednega pregleda zobozdravnika.", "",];
         </script>
     </head>
     <body>
@@ -21,9 +22,22 @@
         <form action="">
             <p>Ime: <input type="text" name="ime"></p>
             <p>Priimek: <input type="text" name="priimek"></p>
-            Moški<input type="checkbox" name="M"><br>
-            Ženska<input type="checkbox" name="Z"><br>
+            Moški<input type="checkbox" name="chkSpol"><br>
+            Ženska<input type="checkbox" name="chkSpol"><br>
             <input type="date" name="datum">
+            <div class="divUre">
+                <p>Označi manjkajoče ure.</p>
+                0<input type="checkbox" id="ura0"><br>
+                1<input type="checkbox" id="ura1"><br>
+                2<input type="checkbox" id="ura2"><br>
+                3<input type="checkbox" id="ura3"><br>
+                4<input type="checkbox" id="ura4"><br>
+                5<input type="checkbox" id="ura5"><br>
+                6<input type="checkbox" id="ura6"><br>
+                7<input type="checkbox" id="ura7"><br>
+                8<input type="checkbox" id="ura8"><br>
+            </div>
+            <input type="submit" value="Generiraj">
         </form>
     </body>
 </html>
