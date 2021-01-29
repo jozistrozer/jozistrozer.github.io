@@ -18,19 +18,44 @@
             #odsekGumbi button{
                 margin-right: 25px;
             }
+
+            body{
+                margin-top: 1%;
+            }
+
+            .container{
+                display: flex;
+                justify-content: center;
+                gap: 50px;
+            }
+
+            .container > div{
+                margin: 15px;
+            }
+
         </style>
     </head>
     <body>
-        <h2>My website</h2>
-        <p>Welcome to my internet lounge.</p>
-        <img src="res/macdemarco.gif" width="350" height="200">
-        <h3>About me</h3>
-        <p>antisocial extrovert. i love learning and exploring new things.</p>
-        <p>i develop and program all sorts of stuff.</p>
-        <p><b>favorite cig brand: </b>Marlboro Gold</p>
-        <p>check out my github: <a href="https://github.com/jozistrozer" target="_blank">jozistrozer</a></p>
-        <p>leave me a message: <a href="mailto:jozistrozer13@gmail.com">jozistrozer13@gmail.com</a></p>
-
+        <div class="container">
+            <div class="header">
+                <h2>My website</h2>
+                <p>Welcome to my internet lounge.</p>
+                <img src="res/macdemarco.gif" width="350" height="200">
+            </div>
+            <div class="aboutme">
+                <h3>About me</h3>
+                <p>Joze Strozer, age <span id="age">18</span> </p>
+                <p>antisocial extrovert. i love learning and exploring new things.</p>
+                <p>i develop and create all sorts of stuff.</p>
+                <p><b>favorite cig brand: </b>Marlboro Gold</p>
+            </div>
+            <div class="contact">
+                <h3>Contact</h3>
+                <p>check out my github: <a href="https://github.com/jozistrozer" target="_blank">jozistrozer</a></p>
+                <p>leave me a message: <a href="mailto:jozistrozer13@gmail.com">jozistrozer13@gmail.com</a></p>
+            </div>
+        </div>
+        <hr>
         <div id="odsekGumbi">
             <button type="button" id="btnMonkey" onclick="ShowMonkeys();">two monkeys in love</button>
             <button type="button"><a href="generator_opravicil.html">Generator opravičil</a></button>
@@ -47,5 +72,14 @@
                 document.getElementById("imgMonkey").style.visibility = "hidden";
             }
         }
+
+        // Starost
+        var birthday = new Date('2002-07-13');
+        var year = new Date().getFullYear() - 2002;
+        if (birthday < new Date()) {
+            year -= 1;
+        }
+
+        document.getElementById("age").innerHTML = year;
     </script>
 </html>
