@@ -4,6 +4,6 @@ Slovenian floor planner with 2D layouts and 3D inspection.
 
 Open https://jozistrozer.github.io/Fuga3D/
 
-Production assets built from the Fuga3D project. TypeScript, production build and all 36 unit tests passed before publication.
+Includes a visual room editor, per-axis cut placement, reference-wall alignment and an interactive laying sequence. Projects and placement preferences are saved locally in the browser; export JSON for backups. Sequence playback is session-only.
 
-Projects are saved locally in your browser. Export JSON for backups.
+Production build and all 49 unit tests passed. Browser checks covered drawing, wall dragging, exact lengths, undo/redo, cut placement and laying steps.
