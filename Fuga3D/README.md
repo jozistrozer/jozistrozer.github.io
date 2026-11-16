@@ -2,8 +2,8 @@
 
 Open https://jozistrozer.github.io/Fuga3D/
 
-Visual room editor, simplified cut presets and laying from a corner, the center or a chosen tile. Center starts expand clockwise toward the edges. Advanced placement and direction controls remain available in collapsed sections.
+Guided room designer: illustrated templates, click-to-draw wall preview or length-and-direction entry in centimeters, automatic outline closure and measurement review. Projects update only after confirmation.
 
-Projects and cut preferences are saved locally in your browser; export JSON for backups. Sequence playback is session-only.
+Includes simplified cut placement and laying from a corner, center or selected tile. Projects are stored in the browser; export JSON for backups.
 
-Validated: 56 tests, TypeScript, production build and browser checks.
+Validated: 63 tests, TypeScript, production build and browser checks of length-based drawing, closure, undo/redo, confirmation and cancellation.
